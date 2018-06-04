@@ -395,8 +395,8 @@ bool sjtu::processor::task_query_ticket()  {
 void sjtu::processor::query_ticket_per_catalog(const char *station1, const char *station2, const char *date,
                                                const char &train_cat, sjtu::ticket_wrap *wrap, int &len)  {
     /// wait for tuning.
-    station_val station_val1[1000];
-    station_val station_val2[1000];
+    station_val station_val1[750];
+    station_val station_val2[750];
     int station_len1;
     int station_len2;
 
@@ -572,7 +572,7 @@ bool sjtu::processor::task_query_transfer() {
     char date[DATE_SIZE];       // 当前日期
     char catalog[CATALOG_SIZE]; // 所有要查询的车次种类
     size_t cat_len;             // 车次种类数量
-    station_val loc2_v[1000];       // 所有经过到达地的简易车辆信息
+    station_val loc2_v[750];       // 所有经过到达地的简易车辆信息
     int len2;
     train_info_val train_info2;          // 换乘后的车辆信息
 
